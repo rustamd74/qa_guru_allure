@@ -7,7 +7,7 @@ from selene.support.shared.jquery_style import s
 from allure_commons.types import AttachmentType
 
 
-def test_dynamic_steps():
+def test_dynamic_steps(open_browser):
     with allure.step('Открываем главную страницу'):
         browser.open('https://github.com')
 
@@ -34,7 +34,7 @@ def test_dynamic_steps():
 @allure.label("owner", "dzhafarovro")
 @allure.feature("Задачи в репозитории")
 @allure.link("https://github.com", name="Testing")
-def test_decorator_steps():
+def test_decorator_steps(open_browser):
     open_main_page()
     search_for_repository()
     go_to_repository()
